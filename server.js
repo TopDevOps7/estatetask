@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static(path));
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://172.31.17.248:8080"
 };
 
 app.use(cors(corsOptions));
@@ -28,7 +28,7 @@ db.sequelize.sync();
 //   console.log("Drop and re-sync db.");
 // });
 
-app.get('/', function (req,res) {
+app.get('/', function (req, res) {
   res.sendFile(path + "index.html");
 });
 
